@@ -1,0 +1,23 @@
+@CHARSET "EUC-KR";
+
+h1{
+background-color: yellow;
+border: 2px solid;
+}
+h3{
+color: pink;
+text-align: right;
+}
+*{
+color: blue;
+text-align:center;
+}
+#text1{
+font-weight:bold;
+}
+.text2{
+font-style: italic;
+}
+h1,h3{
+text-decoration: underline;
+}
