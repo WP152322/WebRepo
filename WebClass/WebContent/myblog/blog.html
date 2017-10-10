@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MY BLOG</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+   <link rel="stylesheet" type="text/css" href="../css/design.css">
+</head>
+
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+ <!-- Modal -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content 회원가입-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4><span class="glyphicon glyphicon-lock"></span> Join Membership</h4>
+        </div>
+        <div class="modal-body">
+          <form id="joinus">
+            <div class="form-group">
+              <label for="name"><span class="glyphicon glyphicon-user"></span>이름이 뭐예요?</label>
+              <input type="text" id="name" class="form-control"  placeholder="이름을 적어주세요" required>
+            </div>
+            <div class="form-group">
+              <label><span class="glyphicon glyphicon-user"></span>나이가 뭐예요?</label>
+              <br>
+              <input type="radio" name="classroom" value="1" checked>1학년
+              <input type="radio" name="classroom" value="2">2학년
+              <input type="radio" name="classroom" value="3">3학년
+            </div>
+              <div class="form-group">
+              <label><span class="glyphicon glyphicon-user"></span>반이 어디예요?</label>
+              <br>
+             <select name="list">
+			<option value="eb">1반</option>
+			<option value="dc">2반</option>
+			<option value="wp">3반</option>
+			<option value="wp">4반</option>
+			<option value="hd">5반</option>
+			<option value="hd">6반</option>
+			</select>
+            </div>
+            <div class="form-group">
+              <label for="name"><span class="glyphicon glyphicon-user"></span>번호가 뭐예요?</label>
+              <input type="text" class="form-control"  placeholder="(전화번호 뭐예요) 학번을 적어주세요" required>
+            </div>
+              <button type="submit" class="btn btn-block" >Finish</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span> Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal content 회원가입 완료-->
+     <div class="modal" id="myModal3">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">회원가입 결과</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+   <!-- Modal content 로그인-->
+     <div class="modal" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">로그인 결과</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#myPage">MY BLOG</a>
+    </div>
+    
+
+    <button id="button1" class="btn" onclick="myModal2show()">Join</button>
+
+    
+    <form class="form-inline form" id="loginForm">
+    <input class="form-control mr-sm-2 input" type="text" placeholder="ID" aria-label="ID" id="id" required>
+    <input class="form-control mr-sm-2 input" type="password" placeholder="Password" aria-label="pwd" id="pwd" required>	
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+    </form>
+    <div class="collapse navbar-collapse center" id="myNavbar" >
+      <ul class="nav navbar-nav navbar-left">
+        <li><a href="#myBlog">SUYEON</a></li>
+        <li><a href="#myProfile">MY PROFILE</a></li>
+        <li><a href="#myFavorite">MY FAVORITE</a></li>
+        <li><a href="#myDream">MY DREAM</a></li>
+      </ul>
+      
+        </div>
+  </div>
+</nav>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="../image/seven.jpg" alt="xxx" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>모모찌 해변</h3>
+          <p>너무 예쁨</p>
+        </div>      
+      </div>
+
+      <div class="item">
+        <img src="../image/two.jpg" alt="xxx" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>나고야 성터</h3>
+          <p>위에서 내려다보는 일본 풍경은 최고</p>
+        </div>      
+      </div>
+    
+      <div class="item">
+        <img src="../image/three.jpg" alt="xxx" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>세번째 날 점심 먹은 곳</h3>
+          <p>되게 푸릇푸릇 청량함이 가득</p>
+        </div>      
+      </div>
+      
+      <div class="item">
+        <img src="../image/one.jpg" alt="xxx" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>웹플벨벳</h3>
+          <p>해피니스 + 러시안룰렛</p>
+        </div>      
+      </div>
+      
+      <div class="item">
+        <img src="../image/four.jpg" alt="xxx" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>힐튼의 밤</h3>
+          <p>야경이 진짜 최고</p>
+        </div>      
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+<!-- Container (MY PROFILE Section) -->
+<div id="myProfile" class="container text-center">
+  <h3>MY PROFILE</h3>
+  <img src="../image/hmm.jpeg" alt="xxx" width="400" height="500">
+  <img src="../image/meme.jpeg" alt="xxx" width="400" height="500">
+  <h4><em>Lee Su Yeon</em></h4>
+  <div class="row">
+    <div class="col-sm-4">
+      <p class="text-center"><strong>학교</strong></p><br>
+      <a href="#demo" data-toggle="collapse">
+        <img src="../image/dimigo.png" alt="xxx" class="img-circle person" width="200" height="200">
+      </a>
+      <div id="demo" class="collapse">
+        <p>KOREA DIGITAL MEDIA HIGH SCHOOL</p>
+        <p>WEB PROGRAMING 15</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p class="text-center"><strong>하는 일</strong></p><br>
+      <a href="#demo2" data-toggle="collapse">
+        <img src="../image/student.jpg" alt="xxx" class="img-circle person" width="200" height="200">
+      </a>
+      <div id="demo2" class="collapse">
+        <p>학생회 여학생부 부장
+        <p>선인장 비선실세</p>
+        <p>드림 라이트 동아리원</p>
+        <p>HDMI 동아리원</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <p class="text-center"><strong>하는 일2</strong></p><br>
+      <a href="#demo3" data-toggle="collapse">
+        <img src="../image/arduino.png" class="img-circle person" alt="xxx" width="200" height="200">
+      </a>
+      <div id="demo3" class="collapse">
+        <p>Android</p>
+        <p>Web</p>
+        <p>Arduino</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container (MY FAVORITE Section) -->
+<div id="myFavorite" class="bg-1">
+  <div class="container">
+    <h3 class="text-center">MY FAVORITE</h3>
+   
+    
+    <div class="row text-center">
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="../image/kentaro.jpg" width="400" alt="xxx" height="200">
+          <p><strong>MY FAVORITE ACTOR</strong></p>
+          <p>さかぐちけんたろう</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="../image/hyeon.png" width="400" alt="xxx" height="200">
+          <p><strong>MY FAVORITE SINGER</strong></p>
+          <p>EXO</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="../image/me.jpg" width="400" alt="xxx" height="200">
+          <p><strong>MY FAVORITE MOVIE</strong></p>
+          <p>ME BEFORE YOU</p>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="thumbnail">
+          <img src="../image/macaron.jpeg" width="400" alt="xxx" height="200">
+          <p><strong>MY FAVORITE FOOD</strong></p>
+          <p>MACARON</p>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+  </div>
+   
+
+<!-- Container (MY DREAM Section) -->
+<div id="myDream" class="container">
+  <h3 class="text-center">MY DREAM</h3>
+  <p class="text-center"><em>JOB, HOUSE, CAR, ...</em></p><br>
+ <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#one">JOB</a></li>
+    <li><a data-toggle="tab" href="#two">HOPE</a></li>
+    <li><a data-toggle="tab" href="#three">HOUSE</a></li>
+    <li><a data-toggle="tab" href="#four">CAR</a></li>
+  </ul>
+ 
+
+  <div class="tab-content">
+    <div id="one" class="tab-pane fade in active">
+      <h2>I want to be a...</h2>
+    <div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Software Programmer</h4>
+        <img src="../image/program.jpg" width="290" alt="xxx" height="200"><br>
+        <p class="card-text">웹개발 앱개발 iot 인공지능 등등등...</p>
+        <a href="http://www.work.go.kr/consltJobCarpa/srch/jobInfoSrch/summaryExmpl.do?jobNm=20220"  target=“_blank” class="btn btn-primary">직업 정보 더 알아보기</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">White Hacker</h4>
+        <img src="../image/hacker.jpg" width="290" alt="xxx" height="200"><br>
+        <p class="card-text">웹해킹 리버싱 등등등...</p>
+        <a href="http://www.work.go.kr/consltJobCarpa/srch/korJobProspect/korJobProspectDtlInfo.do?pageType=SrchByJobCl&choiceCode=KR14&fjobCd=KR140010&tabNo=1"  target=“_blank” class="btn btn-primary">직업 정보 더 알아보기</a>
+      </div>
+    </div>
+  </div>
+ <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Mechanical Engineer</h4> 
+        <img src="../image/car.jpg" width="290" alt="xxx" height="200">
+        <p class="card-text">자동차 공학자 등등등...</p>
+        <a href="http://www.work.go.kr/consltJobCarpa/srch/korJobProspect/korJobProspectDtlInfo.do?pageType=SrchByJobCl&choiceCode=KR01&fjobCd=KR130001&tabNo=1" target=“_blank” class="btn btn-primary">직업 정보 더 알아보기</a>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div id="two" class="tab-pane fade">
+      <h2>Take a positive view of life...</h2><br>
+      <img src="../image/happy.jpg" alt="xxx" width="400" height="300"><br>
+      <p>하루하루를 알차게 행복하게 보낼 수 있는 사람이 되고 싶다</p>
+    </div>
+    <div id="three" class="tab-pane fade">
+      <h2>My future house...</h2><br>
+      <img src="../image/house.jpg" alt="xxx" width="400" height="300"><br>
+      <p>이런 집에서 살고 싶다 돈을 많이 벌어야겠다 ㅠㅠ</p>
+    </div>
+    <div id="four" class="tab-pane fade">
+      <h2>My future car...</h2><br>
+      <img src="../image/coupe.jpg" alt="xxx" width="500" height="300"><br>
+      <p>교장 선생님 차를 타봤는데 너무 좋았다 역시나 돈을 많이 벌어야겠다 ㅠㅠ</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>~ Go To Top ~</p> 
+</footer>
+
+ <script src="../js/script.js"> </script>
+</body>
+</html>
