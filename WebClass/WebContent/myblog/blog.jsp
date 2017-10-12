@@ -1,5 +1,8 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <title>MY BLOG</title>
  <meta charset="utf-8">
@@ -10,7 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
-   <link rel="stylesheet" type="text/css" href="../css/design.css">
+   <link rel="stylesheet" type="text/css" href="../css/design.css?ver=0.2.0">
 </head>
 
 
@@ -87,25 +90,7 @@
 </div>
   
 
-   <!-- Modal content 로그인-->
-     <div class="modal" id="myModal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">로그인 결과</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+   <%@ include file="modal.jsp" %>
 
  
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -119,15 +104,25 @@
       <a class="navbar-brand" href="#myPage">MY BLOG</a>
     </div>
     
-
-    <button id="button1" class="btn" onclick="myModal2show()">Join</button>
-
+    <%
+    	if(session.getAttribute("user")==null){
+    			
+    	
+    %>
+     
+    <!--<button id="button1" class="btn" onclick="myModal2show()">Join</button> -->
+    <button class="btn" onclick = "location.href='/WebClass/myblog/login.jsp'">Login</button>
     
-    <form class="form-inline form" id="loginForm">
-    <input class="form-control mr-sm-2 input" type="text" placeholder="ID" aria-label="ID" id="id" required>
-    <input class="form-control mr-sm-2 input" type="password" placeholder="Password" aria-label="pwd" id="pwd" required>	
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
-    </form>
+      <%
+      } else {
+      %> 
+      <h6 class="useruser"><%=session.getAttribute("user") %></h6>
+      <form action="/WebClass/bloglogout" method="post">
+      <button class="btn btn-outline-success my-2 my-sm-0">Logout</button>
+      </form>
+      <%	
+      	}
+      %>
     <div class="collapse navbar-collapse center" id="myNavbar" >
       <ul class="nav navbar-nav navbar-left">
         <li><a href="#myBlog">SUYEON</a></li>

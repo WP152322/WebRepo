@@ -12,7 +12,7 @@
 <body>
 <div class="container">
 
-  <form class="form-signin" action="/WebClass/login" method="post">
+  <form class="form-signin" id="loginForm">
     <h2 class="form-signin-heading">Please sign in</h2>
     
     <label for="inputEmail" class="sr-only">Email address</label>
@@ -33,15 +33,29 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 <script>
-	<%-- 로그인이 실패한 경우 처리 추가 --%>
-	<%
-		if("error".equals(request.getAttribute("msg"))){
-	%>
-		var myModal = $('#myModal');
-		myModal.find('.modal-title').text('Login Error');
-		myModal.find('.modal-body').text('Invalid username or password');
-		myModal.modal();
-	<% } %>
+	$(document).ready(function() {
+	$('#loginForm').submit(function() {
+		// 자동 submit되는 기능을 막음
+		event.preventDefault();
+
+		// id, pwd값을 가져오기
+		// document.getElementById("id").value
+		var id = $('#inputEmail').val();
+		var pwd = $('#inputPassword').val();
+
+		// 서버로 post 방식으로 전송
+		$.post("/WebClass/bloglogin", { id : id }, function(data) {
+			// alert(data.form.id + "님 로그인되었습니다.");
+			if(data.msg=="error"){
+				var myModal = $('#myModal');
+				myModal.modal();
+				myModal.find('.modal-body').text("로그인에 실패하셨습니다.");
+			} else{
+				location.href="/WebClass/myblog/blog.jsp";
+			}
+		});
+	});
+});
 </script>
 
 </body>

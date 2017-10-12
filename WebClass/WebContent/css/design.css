@@ -67,6 +67,7 @@ body {
       color: #f1f1f1;
       border-radius: 0;
       transition: .2s;
+      float: right;
   }
   .btn:hover, .btn:focus {
       border: 1px solid #333;
@@ -151,4 +152,14 @@ body {
   .center{
   	margin:0 200px;
   	text-align:center;
+  }
+  
+  .useruser{
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+      float: right;
   }
