@@ -6,7 +6,7 @@ $(document).ready(function() {
 		// id, pwd값을 가져오기
 		// document.getElementById("id").value
 		var id = $('#id').val();
-		var pwd = $('#pwd').val();
+//		var pwd = $('#pwd').val();
 
 		// 서버로 post 방식으로 전송
 		$.post("/WebClass/bloglogin", {

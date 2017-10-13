@@ -41,7 +41,7 @@
 		// id, pwd값을 가져오기
 		// document.getElementById("id").value
 		var id = $('#inputEmail').val();
-		var pwd = $('#inputPassword').val();
+		//var pwd = $('#inputPassword').val();
 
 		// 서버로 post 방식으로 전송
 		$.post("/WebClass/bloglogin", { id : id }, function(data) {
@@ -50,6 +50,7 @@
 				var myModal = $('#myModal');
 				myModal.modal();
 				myModal.find('.modal-body').text("로그인에 실패하셨습니다.");
+				$('#inputPassword').val('');
 			} else{
 				location.href="/WebClass/myblog/blog.jsp";
 			}
