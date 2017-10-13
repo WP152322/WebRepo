@@ -18,6 +18,7 @@ $(document).ready(function() {
 				var myModal = $('#myModal');
 				myModal.modal();
 				myModal.find('.modal-body').text("로그인에 실패하셨습니다.");
+				var pwd = $(' ').val();
 			} else{
 				location.href="/WebClass/myblog/blog.jsp";
 			}
