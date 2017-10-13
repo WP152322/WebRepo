@@ -21,7 +21,7 @@ $(document).ready(function() {
 				var pwd = $(' ').val();
 			} else{
 				location.href="/WebClass/myblog/blog.jsp";
-			}
+			} 
 		});
 	});
 });
